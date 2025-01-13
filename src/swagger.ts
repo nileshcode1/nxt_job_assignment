@@ -13,12 +13,18 @@ const options: swaggerJsdoc.Options = {
     },
     servers: [
       {
-        url: "https://nxt-job-assignment.onrender.com/",
+        url: "https://nxt-job-assignment.onrender.com", // Update with the deployed URL
+        description: "Deployed server",
+      },
+      {
+        url: "http://localhost:3000", // Local development
+        description: "Local server",
       },
     ],
   },
   apis: ["./src/routes/*.ts"],
 };
+
 
 const specs = swaggerJsdoc(options);
 

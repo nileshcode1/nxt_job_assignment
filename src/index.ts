@@ -1,4 +1,3 @@
-// src/index.ts
 import express from "express";
 import { serverConfig } from "./config";
 import jobsRouter from "./routes/job";
@@ -24,9 +23,10 @@ app.get("/", (req, res) => {
 });
 
 // Start Server
-app.listen(serverConfig.port, () => {
-  console.log(`Server is running on port ${serverConfig.port}`);
+const PORT = serverConfig.port || 3000; // Use environment variable or default
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
   console.log(
-    `API Docs available at http://localhost:${serverConfig.port}/api-docs`
+    `API Docs available at https://nxt-job-assignment.onrender.com/api-docs`
   );
 });
